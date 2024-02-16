@@ -1,0 +1,36 @@
+api:
+  coingecko:
+    domain: "api.coingecko.com"
+    version: "/api/v3"
+    x-cg-api-key: "CG-D6LgYTcvP54mkiFs6JWxMcE8"
+    endpoints: 
+      coins-markets: "/coins/markets" 
+      
+      # simple: "/simple"
+      # coins: "/coins"
+      
+      # coinscategories: "/coins/categories"
+      # contract: "/contract"
+      # assetplatforms: "/asset_platforms"
+      # nfts: "/nfts"
+      # exchanges: "/exchanges"
+      # derivatives: "/derivatives"
+      # search: "/search"
+      # searchtrend: "/search/trending"
+      # global: "/global"
+      # companies: "/companies"
+# Vist https://apiguide.coingecko.com/getting-started/endpoint-overview for details about the enpoints
+
+database:
+  postgres: "db_coingecko"
+
+spring.datasource:
+  driverClassName: "org.hibernate.dialect.PostgreSQLDialect"
+  url: "jdbc:postgresql://localhost:5432/${database.postgres}"
+  username: "postgres"
+  password: "admin"
+
+spring.jpa:
+  show-sql: true
+  hibernate.ddl-auto: update #update
+  #Hibernate ddl auto (create, create-drop, update, validate)
