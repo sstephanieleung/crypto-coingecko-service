@@ -25,53 +25,59 @@ public class CoinDTO {
     private String image;
 
     @JsonProperty(value = "current_price")
-    private double currentPrice;
+    private Double currentPrice;
 
     @JsonProperty(value = "market_cap")
-    private long marketCap;
+    private Long marketCap;
 
     @JsonProperty(value = "market_cap_rank")
-    private int marketCapRank;
+    private Integer marketCapRank;
 
     @JsonProperty(value = "fully_diluted_valuation")
-    private long fullyDilutedValuation;
+    private Long fullyDilutedValuation;
 
     @JsonProperty(value = "total_volume")
-    private long totalVolume;
+    private Long totalVolume;
 
     @JsonProperty(value = "high_24h")
-    private double high24H;
+    private Double high24H;
 
     @JsonProperty(value = "low_24h")
-    private double low24H;
+    private Double low24H;
 
     @JsonProperty(value = "price_change_24h")
-    private double priceChange24H;
+    private Double priceChange24H;
 
     @JsonProperty(value = "price_change_percentage_24h")
-    private double priceChangePercentage24H;
+    private Double priceChangePercentage24H;
+
+    @JsonProperty(value = "market_cap_change_24h")
+    private Long marketCapChange24h;
+
+    @JsonProperty(value = "market_cap_change_percentage_24h")
+    private Double marketCapChangePercentage24h;
 
     @JsonProperty(value = "circulating_supply")
-    private double circulatingSupply;
+    private Double circulatingSupply;
 
     @JsonProperty(value = "total_supply")
-    private double totalSupply;
+    private Double totalSupply;
 
     @JsonProperty(value = "max_supply")
-    private double maxSupply;
+    private Double maxSupply;
 
-    private double ath;
+    private Double ath;
 
     @JsonProperty(value = "ath_change_percentage")
-    private double athChangePercentage;
+    private Double athChangePercentage;
 
     @JsonProperty(value = "ath_date")
     private String athDate;
 
-    private double atl;
+    private Double atl;
 
     @JsonProperty(value = "atl_change_percentage")
-    private double atlChangePercentage;
+    private Double atlChangePercentage;
 
     @JsonProperty(value = "atl_date")
     private String atlDate;
@@ -79,14 +85,14 @@ public class CoinDTO {
     @Setter
     private Roi roi;
 
-    @JsonProperty(value = "last_updated")
-    private String lastUpdated;
-
     @Getter
     @Builder
     public static class Roi{
-        private double times;
+        private Double times;
         private String currency;
-        private double percentage;
+        private Double percentage;
     }
+
+    @JsonProperty(value = "last_updated")
+        private String lastUpdated;
 }

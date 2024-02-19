@@ -2,6 +2,8 @@ package com.vtxlab.bootcamp.bccryptocoingecko.entity;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -36,53 +38,59 @@ public class CoinEntity implements Serializable {
     private String image;
 
     @Column(name = "current_price")
-    private double currentPrice;
+    private Double currentPrice;
 
     @Column(name = "market_cap")
-    private long marketCap;
+    private Long marketCap;
 
     @Column(name = "market_cap_rank")
-    private int marketCapRank;
+    private Integer marketCapRank;
 
     @Column(name = "fully_diluted_valuation")
-    private long fullyDilutedValuation;
+    private Long fullyDilutedValuation;
 
     @Column(name = "total_volume")
-    private long totalVolume;
+    private Long totalVolume;
 
     @Column(name = "high_24h")
-    private double high24H;
+    private Double high24H;
 
     @Column(name = "low_24h")
-    private double low24H;
+    private Double low24H;
 
     @Column(name = "price_change_24h")
-    private double priceChange24H;
+    private Double priceChange24H;
 
     @Column(name = "price_change_percentage_24h")
-    private double priceChangePercentage24H;
+    private Double priceChangePercentage24H;
+
+    @Column(name = "market_cap_change_24h")
+    private Long marketCapChange24h;
+
+    @Column(name = "market_cap_change_percentage_24h")
+    private Double marketCapChangePercentage24h;
 
     @Column(name = "circulating_supply")
-    private double circulatingSupply;
+    private Double circulatingSupply;
 
     @Column(name = "total_supply")
-    private double totalSupply;
+    private Double totalSupply;
 
     @Column(name = "max_supply")
-    private double maxSupply;
+    private Double maxSupply;
 
-    private double ath;
+    private Double ath;
 
     @Column(name = "ath_change_percentage")
-    private double athChangePercentage;
+    private Double athChangePercentage;
 
     @Column(name = "ath_date")
     private String athDate;
 
-    private double atl;
+    private Double atl;
 
     @Column(name = "atl_change_percentage")
-    private double atlChangePercentage;
+    private Double atlChangePercentage;
 
     @Column(name = "atl_date")
     private String atlDate;
@@ -91,11 +99,11 @@ public class CoinEntity implements Serializable {
     private String lastUpdated;
 
     @Column(name = "roi_times")
-    private double roiTimes;
+    private Double roiTimes;
 
     @Column(name = "roi_currency")
     private String roiCurrency;
 
     @Column(name = "roi_percentage")
-    private double roiPercentage;
+    private Double roiPercentage;
 }
