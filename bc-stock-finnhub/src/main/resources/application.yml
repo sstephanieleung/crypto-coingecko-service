@@ -1,0 +1,13 @@
+server:
+  port: 8091
+
+api:
+  finnhub:
+    domain: "finnhub.io"
+    base_path: "/api/v1"
+    scheme: "https"
+    token: cn9iv41r01qoee9a5hl0cn9iv41r01qoee9a5hlg
+    symbol: "TSLA, AAPL, MSFT"
+    endpoint:
+      quote: "/quote"
+      profile: "/stock/profile2"
