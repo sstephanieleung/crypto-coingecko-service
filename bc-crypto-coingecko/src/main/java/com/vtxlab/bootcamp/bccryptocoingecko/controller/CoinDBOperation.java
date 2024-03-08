@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.vtxlab.bootcamp.bccryptocoingecko.entity.CoinEntity;
 import com.vtxlab.bootcamp.bccryptocoingecko.infra.ApiResponse;
 
@@ -20,7 +21,7 @@ public interface CoinDBOperation {
 
     @GetMapping(value = "/coins/updatedb")
     @ResponseStatus(value = HttpStatus.OK)
-    ApiResponse<List<CoinEntity>> refreshDBFromApi(@RequestParam(value = "currency", required = false) String currency);
+    ApiResponse<List<CoinEntity>> refreshDBFromApi(@RequestParam(value = "currency", required = false) String currency) throws JsonProcessingException;
 
     
 

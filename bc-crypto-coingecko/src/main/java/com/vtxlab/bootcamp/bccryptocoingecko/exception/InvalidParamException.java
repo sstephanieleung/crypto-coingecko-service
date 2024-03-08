@@ -5,11 +5,11 @@ import com.vtxlab.bootcamp.bccryptocoingecko.infra.Syscode;
 import lombok.Getter;
 
 @Getter
-public class InvalidInputException extends RuntimeException {
+public class InvalidParamException extends RuntimeException {
     
     private String code;
 
-    public InvalidInputException(Syscode syscode){
-        super(syscode.getMessage());
+    public InvalidParamException(Syscode SysCode){
+        super(SysCode.getMessage());
     }
 }

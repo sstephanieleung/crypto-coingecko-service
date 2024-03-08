@@ -22,6 +22,9 @@ public class CoinDTO {
 
     private String name;
 
+    @JsonProperty(value = "currency")
+    private String currency;
+
     private String image;
 
     @JsonProperty(value = "current_price")

@@ -1,26 +1,26 @@
-package com.vtxlab.bootcamp.bccryptocoingecko.service.impl;
+package com.vtxlab.bootcamp.bccryptocoingecko.infra.holder;
 
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.vtxlab.bootcamp.bccryptocoingecko.entity.CoinEntity;
 import com.vtxlab.bootcamp.bccryptocoingecko.mapper.CoinMapper;
 import com.vtxlab.bootcamp.bccryptocoingecko.model.Coin;
 import com.vtxlab.bootcamp.bccryptocoingecko.repository.CoinRepository;
-import com.vtxlab.bootcamp.bccryptocoingecko.service.CoinDBService;
 
-@Service
-public class CoinDB implements CoinDBService {
+public class DBHolder implements DBHolderService {
 
-    @Autowired
+    
     private CoinRepository coinRepository;
 
-    @Autowired
+    
     private CoinMapper coinMapper;
+
+    public DBHolder (CoinRepository coinRepository, CoinMapper coinMapper){
+        this.coinMapper = coinMapper;
+        this.coinRepository = coinRepository;
+    }
 
     @Override
     public List<CoinEntity> getCoins(Set<String> coinIds) {

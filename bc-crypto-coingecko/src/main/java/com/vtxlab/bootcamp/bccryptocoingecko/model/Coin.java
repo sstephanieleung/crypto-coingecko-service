@@ -2,11 +2,17 @@ package com.vtxlab.bootcamp.bccryptocoingecko.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Setter
 public class Coin {
 
     @JsonProperty(value = "id")
@@ -80,12 +86,15 @@ public class Coin {
 
     @Getter
     @Builder
-    public static class Roi{
+    @AllArgsConstructor
+    @NoArgsConstructor
+    @Setter
+    public static class Roi {
         private Double times;
         private String currency;
         private Double percentage;
     }
 
     @JsonProperty(value = "last_updated")
-        private String lastUpdated;
+    private String lastUpdated;
 }

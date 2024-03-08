@@ -1,6 +1,6 @@
 package com.vtxlab.bootcamp.bccryptocoingecko.model;
 
-import com.vtxlab.bootcamp.bccryptocoingecko.exception.InvalidInputException;
+import com.vtxlab.bootcamp.bccryptocoingecko.exception.InvalidParamException;
 import com.vtxlab.bootcamp.bccryptocoingecko.infra.Syscode;
 
 import lombok.Getter;
@@ -24,12 +24,12 @@ public enum Currency {
         this.code = code;
     }
 
-    public static Currency get(String text) throws InvalidInputException{
+    public static Currency get(String text) throws InvalidParamException{
         if(text == null)
             return Currency.US_DOLLAR;
         for(Currency cur: Currency.values())
             if(cur.getCode().equals(text))
                 return cur;
-        throw new InvalidInputException(Syscode.INVALID_CURRENCY_INPUT);
+        throw new InvalidParamException(Syscode.INVALID_CURRENCY_INPUT);
     }
 }

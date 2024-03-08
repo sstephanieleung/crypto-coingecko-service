@@ -1,4 +1,4 @@
-package com.vtxlab.bootcamp.bccryptocoingecko.service;
+package com.vtxlab.bootcamp.bccryptocoingecko.infra.holder;
 
 import java.util.List;
 import java.util.Set;
@@ -6,7 +6,7 @@ import java.util.Set;
 import com.vtxlab.bootcamp.bccryptocoingecko.entity.CoinEntity;
 import com.vtxlab.bootcamp.bccryptocoingecko.model.Coin;
 
-public interface CoinDBService {
+public interface DBHolderService {
 
     // CoinEntity getCoin(String ids);
 

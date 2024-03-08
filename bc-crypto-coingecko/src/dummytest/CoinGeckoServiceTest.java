@@ -11,18 +11,19 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import com.vtxlab.bootcamp.bccryptocoingecko.infra.Scheme;
+import com.vtxlab.bootcamp.bccryptocoingecko.infra.Uri;
+import com.vtxlab.bootcamp.bccryptocoingecko.infra.holder.DBHolder;
+import com.vtxlab.bootcamp.bccryptocoingecko.infra.holder.RedisHolder;
 import com.vtxlab.bootcamp.bccryptocoingecko.model.Coin;
 import com.vtxlab.bootcamp.bccryptocoingecko.model.Currency;
-import com.vtxlab.bootcamp.bccryptocoingecko.service.impl.CoinDB;
-import com.vtxlab.bootcamp.bccryptocoingecko.service.impl.CoinGecko;
 
-@WebMvcTest(CoinGecko.class)
+@SpringBootTest
 @ExtendWith(MockitoExtension.class)
 public class CoinGeckoServiceTest {
 
@@ -30,7 +31,13 @@ public class CoinGeckoServiceTest {
     private RestTemplate restTemplate;
 
     @MockBean
-    private CoinDB coindb;
+    private DBHolder coindb;
+
+    @MockBean
+    private RedisHolder redisHolder;
+
+    @MockBean
+    private Uri uri;
 
     @Test
     void testGetCoinsFromApi() {

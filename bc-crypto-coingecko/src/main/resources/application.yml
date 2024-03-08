@@ -1,3 +1,6 @@
+server:
+  port: 8090
+
 api:
   coingecko:
     domain: "api.coingecko.com"
@@ -34,3 +37,7 @@ spring.jpa:
   show-sql: true
   hibernate.ddl-auto: update #update
   #Hibernate ddl auto (create, create-drop, update, validate)
+
+memory:
+  key:
+    prefix: "crypto:coingecko:coins-markets:"
