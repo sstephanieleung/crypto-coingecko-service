@@ -1,0 +1,30 @@
+server:
+  port: 8092
+
+api:
+  crypto:
+    domain: "localhost"
+    port: "8090"
+    basepath: "/crypto/coingecko/api/v1"
+    endpath: "/coins"
+    currency: "usd"
+  stock:
+    domain: "localhost"
+    port: "8091"
+    basepath: "/stock/finnhub/api/v1/"
+    endpath:
+      profile: "/profile2"
+      quote: "/quote"
+
+database:
+  postgres: "db-financial-data"
+
+spring.datasource:
+  driverClassName: "org.hibernate.dialect.PostgreSQLDialect"
+  url: "jdbc:postgresql://localhost:5432/${database.postgres}"
+  username: "postgres"
+  password: "admin"
+
+spring.jpa:
+  show-sql: true
+  hibernate.ddl-auto: update
